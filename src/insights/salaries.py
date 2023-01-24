@@ -24,10 +24,7 @@ def get_min_salary(path: str) -> int:
     min_salary_list = []
 
     for row in data:
-        if (
-            row["min_salary"]
-            and row["max_salary"] != "invalid"
-        ):
+        if row["min_salary"] and row["max_salary"] != "invalid":
             min_salary_list.append(int(row["min_salary"]))
     min_salary = min(min_salary_list)
     return min_salary
