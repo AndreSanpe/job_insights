@@ -6,8 +6,8 @@ def get_max_salary(path: str) -> int:
     data = read(path)
     max_salary = 0
     for row in data:
-        if row['max_salary'] and int(row['max_salary']) > max_salary:
-            max_salary = int(row['max_salary'])
+        if row["max_salary"] and int(row["max_salary"]) > max_salary:
+            max_salary = int(row["max_salary"])
     return print(max_salary)
 
 
