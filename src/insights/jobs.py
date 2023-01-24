@@ -17,14 +17,14 @@ def read(path: str) -> List[Dict]:
 
 def get_unique_job_types(path: str) -> List[str]:
     data = read(path)
-    full_list = []
+    full_list_job_types = []
     for row in data:
-        if row["job_type"] and row["job_type"] not in full_list:
-            full_list.append(row["job_type"])
-    return print(full_list)
+        if row["job_type"] and row["job_type"] not in full_list_job_types:
+            full_list_job_types.append(row["job_type"])
+    return full_list_job_types
 
 
-get_unique_job_types("data/jobs.csv")
+# get_unique_job_types("data/jobs.csv")
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
