@@ -9,28 +9,22 @@ def read(path: str) -> List[Dict]:
     # final_file = []
     with open(path) as file:
         reader = list(csv.DictReader(file))
-        return print(reader)
+        return reader
 
 
-read("data/jobs.csv")
+# read("data/jobs.csv")
 
 
 def get_unique_job_types(path: str) -> List[str]:
-    """Checks all different job types and returns a list of them
+    data = read(path)
+    full_list = []
+    for row in data:
+        if row["job_type"] and row["job_type"] not in full_list:
+            full_list.append(row["job_type"])
+    return print(full_list)
 
-    Must call `read`
 
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique job types
-    """
-    raise NotImplementedError
+get_unique_job_types("data/jobs.csv")
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
