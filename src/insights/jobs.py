@@ -29,12 +29,12 @@ def get_unique_job_types(path: str) -> List[str]:
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
     data = read(jobs)
-    filtered_job_types = []
+    filtered_by_job_types = []
     for row in data:
         if row["job_type"] == job_type:
-            filtered_job_types.append(row)
+            filtered_by_job_types.append(row)
 
-    return filtered_job_types
+    return filtered_by_job_types
 
 
 # filter_by_job_type('data/jobs.csv', 'FULL_TIME')
