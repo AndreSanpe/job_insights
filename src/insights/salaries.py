@@ -57,8 +57,6 @@ def filter_by_salary_range(
             value_min = int(job["min_salary"])
             value_max = int(job["max_salary"])
             salary_value = int(salary)
-            if value_min > value_max:
-                continue
             if value_min <= salary_value <= value_max:
                 list_all_salaries.append(job)
         except Exception:
