@@ -20,10 +20,10 @@ def get_min_salary(path: str) -> int:
     for row in data:
         if row["min_salary"] and int(row["min_salary"]) > min_salary:
             min_salary = int(row["min_salary"])
-    return print(min_salary)
+    return min_salary
 
 
-get_min_salary("data/jobs.csv")
+# get_min_salary("data/jobs.csv")
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
