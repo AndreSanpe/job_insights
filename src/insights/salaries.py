@@ -6,8 +6,13 @@ def get_max_salary(path: str) -> int:
     data = read(path)
     max_salary = 0
     for row in data:
-        if row["max_salary"] and int(row["max_salary"]) > max_salary:
+        if (
+            row["max_salary"]
+            and row["max_salary"] != "invalid"
+            and int(row["max_salary"]) > max_salary
+        ):
             max_salary = int(row["max_salary"])
+
     return max_salary
 
 
@@ -16,10 +21,15 @@ def get_max_salary(path: str) -> int:
 
 def get_min_salary(path: str) -> int:
     data = read(path)
-    min_salary = 0
+    min_salary_list = []
+
     for row in data:
-        if row["min_salary"] and int(row["min_salary"]) > min_salary:
-            min_salary = int(row["min_salary"])
+        if (
+            row["min_salary"]
+            and row["max_salary"] != "invalid"
+        ):
+            min_salary_list.append(int(row["min_salary"]))
+    min_salary = min(min_salary_list)
     return min_salary
 
 
