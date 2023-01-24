@@ -16,13 +16,12 @@ get_unique_industries("data/jobs.csv")
 
 
 def filter_by_industry(jobs: List[Dict], industry: str) -> List[Dict]:
-    data = read(jobs)
     filtered_by_industry = []
-    for row in data:
-        if row["industry"] == industry:
-            filtered_by_industry.append(row)
+    for job in jobs:
+        if job["industry"] == industry:
+            filtered_by_industry.append(job)
 
-        return filtered_by_industry
+    return filtered_by_industry
 
 
 # filter_by_industry("data/jobs.csv", 'Restaurants, Bars & Food Services')
