@@ -12,21 +12,21 @@ Once you have the dependencies installed, you can clone the repository and creat
 
 ```
 git clone https://github.com/AndreSanpe/job_insights.git
-cd job_insights
-virtualenv env
-source env/bin/activate
+cd sd-021-b-project-job-insights
+python3 -m venv .venv && source .venv/bin/activate
+
 ```
 
 Next, install the required packages:
 
 ```
-pip install -r requirements.txt
+python3 -m pip install -r dev-requirements.txt
 ```
 
 Finally, you can run the application:
 
 ```
-python app.py
+flask run
 ```
 
 ## Contributing
@@ -34,3 +34,8 @@ python app.py
 We welcome contributions from the open source community. If you would like to contribute, please fork the repository and submit a pull request.
 
 Thank you for your interest in Job Insights!
+
+
+## License
+
+Sanpe Tunes is licensed under the [Trybe](https://www.betrybe.com/).
